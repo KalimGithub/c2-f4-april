@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const Home = () => {
   const [pincode, setPincode] = useState("");
   const navigate = useNavigate();
@@ -7,7 +7,7 @@ const Home = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(pincode);
-    navigate(`/post/${pincode}`);
+    pincode?navigate(`/post/${pincode}`):alert("Please enter a valid pincode")
   };
 
   return (
